@@ -75,7 +75,33 @@ gpg --armor --export <HASH>
 
 ```
 git config user.signingkey <HASH>
+GPG_TTY=$(tty)
+export GPG_TTY
+git commit -S -m test
 ```
 
+```
+$ echo test | gpg --clearsign
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+test
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEE1fay9HrndAM0rjtxWo5ssOGpk5sFAl2u3sEACgkQWo5ssOGp
+k5vAaw/+KwQ+Yy8SryBekRSJQfPJSieVz7eYDUtdC1ACU8/lGULj6iVxWJQzXOx8
+7qO2p0nCsYlNKZ/sRWiHlQ1LhrNMihj9XYA7CNizQT0S6Gufp74WMmzuvOf23m9G
+THFGPOyEHaCxT1UQmBnzWViL4h6+e1IBMlZXWxNcZJ/FXbtQH9TWb7/mV9uBarN6
+IvG54Yix6A/+BHdXV/E2cvwVvdH2MyE6ixS8Ki+ilvIYykB2Z24f70+gAV0sHL79
+R76pcEs/gG8nFugCAYyzM1ClOa2JtgDpPFs4e0T9zvu9T0lzmKju0ut1TkvRgJG0
+LDDR5yoznfnosMyR5sWRl4rIhKxRCx3UNy3fsQ0hP/mbIifL6987Tczdz8J58BRr
+sRr9b7ZSr7ERtQTu7SSr6D0xRd3kpsS7he4A+k0WJ3yfwVHZTJZ7JYUjOt/MkYR7
+mnYA4WLZsXwXYbzLnIWgsA7WvqjqWlucHJv1ZcyWcwwBmmbq3fYAWGlroviNkVHU
+8ncCPHrx00xfJ5mElM6kAdYSlUkE6sRYSxH2JVKZCnrtg700bvUXKK9tS4RP0ZOm
+Wr4oNhWxjkYerk5LThV6+dnDvxGX3Q4oOtvp4tK/Y2kVmzY1D3Z+hECw2GuUZisQ
+MEN5wuIZVF11P8049yS5lYNKgScwAcP/ga1gNTt1d256HA8Gkdk=
+=7Rkp
+-----END PGP SIGNATURE-----
+```
 
 以上
