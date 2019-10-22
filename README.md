@@ -65,4 +65,17 @@ Hello, git-crypt!
 $
 ```
 
+## gitのコミットに署名
+
+下記の結果をGitHubに登録します。
+
+```
+gpg --armor --export <HASH>
+```
+
+```
+git config user.signingkey <HASH>
+```
+
+
 以上
